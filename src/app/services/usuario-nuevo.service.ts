@@ -10,11 +10,11 @@ export class UsuarioNuevoService {
         public wsService: WebsocketService
     ) { }
 
-    newUser(name: string) {
+    userNew(name: string) {
         this.wsService.loginWS(name);
     }
 
-    getUsuario() {
+    getUser() {
         return this.wsService.listen('user');
     }
 

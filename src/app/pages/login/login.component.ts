@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   name = '';
 
@@ -15,9 +15,6 @@ export class LoginComponent implements OnInit {
     public wsService: WebsocketService,
     private router: Router
   ) { }
-
-  ngOnInit() {
-  }
 
   login() {
     this.wsService.loginWS(this.name)

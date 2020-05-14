@@ -14,7 +14,7 @@ export class MensajesComponent implements OnInit {
         public wsService: WebsocketService
     ) {
 
-        this.name = wsService.usuario.name;
+        this.name = wsService.user.name;
         console.log(this.name);
 
     }
@@ -22,4 +22,7 @@ export class MensajesComponent implements OnInit {
     ngOnInit() {
     }
 
+    logout() {
+        this.wsService.logoutWs();
+    }
 }

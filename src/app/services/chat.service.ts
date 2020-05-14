@@ -16,6 +16,7 @@ export class ChatService {
             from: this.wsService.getUser().name,
             body: message
         };
+        console.log(payload);
 
         this.wsService.emit('message', payload);
     }
@@ -26,6 +27,14 @@ export class ChatService {
 
     getMessagePrivate() {
         return this.wsService.listen('message-private');
+    }
+
+    getActiveUsers() {
+        return this.wsService.listen('active-users');
+    }
+
+    emitActiveUsers() {
+        return this.wsService.emit('get-users');
     }
 
 }
